@@ -14,10 +14,12 @@ module.exports = {
       },
       userId: {
         allowNull: false,
+        references: { model: 'Users' },
         type: Sequelize.INTEGER
       },
       restId: {
         allowNull: false,
+        references: { model: 'Restaurants' },
         type: Sequelize.INTEGER
       },
       content: {

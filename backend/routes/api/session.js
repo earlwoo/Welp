@@ -29,7 +29,7 @@ router.get('/', restoreUser, (req, res) => {
 }
 );
 
-router.post('/', validateLogin, asyncHandler(async (req, res, next) => {
+router.post('/login', validateLogin, asyncHandler(async (req, res, next) => {
     const { credential, password } = req.body;
 
     const user = await User.login({ credential, password });
@@ -50,7 +50,7 @@ router.post('/', validateLogin, asyncHandler(async (req, res, next) => {
 }),
 );
 
-router.delete('/', (_req, res) => {
+router.delete('/logout', (_req, res) => {
     res.clearCookie('token');
     return res.json({ message: 'success' });
 });
