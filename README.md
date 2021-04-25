@@ -1,6 +1,9 @@
-
 # jwt_auth_project
   Welp is a fullstack front-end to back-end project.  It is a clone of the Yelp website which shows businesses and business details.  Welp enables a user to see a list of restaurants and view detailed information about the restaurant, and it's reviews 
+
+* Live Link Address:  https://solo-project-yelpclone.herokuapp.com/
+* Project Github: https://github.com/earlwoo/welp
+     
 
 
 ## MVP
@@ -30,21 +33,20 @@
 
 ## Technical Showcase
 
-All of the information to display for a user is aquired, then displayed without requiring a reload to the web-page.  The information is fetched asynchronously, then used to render HTML to the user's homepage to smoothly present all information a user could have access to.
+TBD
 ```javascript
 
 ```
-Rendering the information without requiring a page reload means we cannot simply set event handlers for elements grabbed after the DOM content was loaded, since they could possibly be replaced or be missing from the page at a later time.  Since we cannot place event listeners on html elements rendered in the future, we used event capturing to work around this issue, and made a capture event (opposite of bubbling) on html elements that would not be manipulated by AJAX throughout the user's interaction with the site.
+TBD
 ```javascript
 
 ```
-A robust search feature that is able to filter through all the user's task through a term to include, exclude, and also the option to search through other properties of a task, not just it's name
+TBD
 
 ```javascript
 
 ```
-Simple, clean, and modern styling features such as subtle color changes, hover effects, and menu transitions makes the webpage engaging, while keeping it clutter free to focus on the functionality of the webpage/tool.
-
+TBD
 ```CSS
 
 ```
