@@ -1,0 +1,13 @@
+.login__modal--show {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 500px;
+    border-radius: 20px;
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+}

@@ -6,7 +6,7 @@ const API_KEY = "yp8e_ukuTNrRLpFjEH5C2gtF7BO5AHt_HXhh5a6sdE9RQmPbxVcvfdaLR2she3o
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     let bizArr = [];
-    const res = await fetch('https://api.yelp.com/v3/businesses/search?term=restaurant&location=philadelphia&sort_by=rating', {
+    const res = await fetch('https://api.yelp.com/v3/businesses/search?term=restaurant&location=philadelphia&sort_by=rating&limit=30', {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${API_KEY}`,
@@ -33,13 +33,10 @@ module.exports = {
           display_phone
         } = biz
 
-        return {
-          name,
-          imageUrl: image_url,
-          url,
-          rating,
+        return { name, imageUrl: image_url, url, rating,
           categories: JSON.stringify(categories),
-          transactions, price,
+          transactions: JSON.stringify({...transactions}),
+          price, rating,
           location: JSON.stringify(location),
           phoneNum: display_phone
         }

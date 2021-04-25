@@ -21,7 +21,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       transactions: {
-        type: Sequelize.ARRAY(Sequelize.STRING)
+        type: Sequelize.TEXT
       },
       categories: {
         allowNull: false,
