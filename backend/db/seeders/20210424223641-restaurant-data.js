@@ -21,9 +21,23 @@ module.exports = {
       businesses = businesses.businesses
 
       bizArr = businesses.map(biz => {
-        const { name, image_url, url, rating, categories, transactions, price, location, display_phone } = biz
+        const {
+          name,
+          image_url,
+          url,
+          rating,
+          categories,
+          transactions,
+          price,
+          location,
+          display_phone
+        } = biz
 
-        return { name, imageUrl: image_url, url, rating,
+        return {
+          name,
+          imageUrl: image_url,
+          url,
+          rating,
           categories: JSON.stringify(categories),
           transactions, price,
           location: JSON.stringify(location),
