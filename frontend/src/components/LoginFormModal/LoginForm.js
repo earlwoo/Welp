@@ -20,6 +20,19 @@ function LoginForm() {
     );
   };
 
+  const handleDemo = (e) => {
+    e.preventDefault()
+    setErrors([]);
+    setCredential('demo@user.io')
+    setPassword('password')
+    return dispatch(sessionActions.login({ credential, password })).catch(
+      async (res) => {
+        const data = await res.json();
+        if (data && data.errors) setErrors(data.errors);
+      }
+    );
+  }
+
   return (
     <div className='login__modal--show'>
       <form className='login__form' onSubmit={handleSubmit}>
@@ -44,6 +57,8 @@ function LoginForm() {
           />
         <button type="submit">Log In</button>
       </form>
+      <button
+      onClick={handleDemo}>Demo User</button>
     </div>
   );
 }
