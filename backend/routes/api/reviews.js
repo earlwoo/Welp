@@ -12,9 +12,10 @@ router.post('/', asyncHandler(async (req, res) => {
     const { title, content, rating, userId, restId } = req.body
 
     try {
-        await Review.create({
+        const addedReview = await Review.create({
             title, content, rating, userId, restId
         })
+        res.json(addedReview)
     } catch(err) {
         console.log(err)
     }
@@ -27,6 +28,7 @@ router.delete('/', asyncHandler(async(req, res) => {
             id
         }
     })
+    res.json({id})
 }))
 
 

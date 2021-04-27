@@ -7,7 +7,7 @@ const ReviewSlot = ({ review }) => {
     const user = useSelector(state => state.session.user)
     const dispatch = useDispatch()
 
-    const { id, title, userId, restId, content, rating } = review
+    const { id, title, userId, content, rating } = review
 
     const handleDelete = (e, id) => {
         e.preventDefault()

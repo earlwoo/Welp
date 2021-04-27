@@ -12,7 +12,7 @@ function ReviewFormModal({ restId }) {
             <button onClick={() => setShowModal(true)} disabled={!user}>Add Review</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <ReviewForm restId={restId} />
+                    <ReviewForm setShowModal={setShowModal} restId={restId} />
                 </Modal>
             )}
         </>

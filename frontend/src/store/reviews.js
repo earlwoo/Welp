@@ -33,8 +33,8 @@ export const fetchReviews = () => async(dispatch) => {
         let reviews = await res.json()
         let objRev = {}
         reviews.forEach(review => objRev[review.id] = review)
-        dispatch(setReviews(objRev))
-        return reviews
+        return dispatch(setReviews(objRev))
+
     }catch (err) {
         console.log(err)
     }
@@ -50,7 +50,8 @@ export const addReview = (review) => async(dispatch) => {
     if (!res.ok) throw res;
 
     try {
-        dispatch(addOne(review))
+        let newReview = await res.json()
+        return dispatch(addOne(newReview))
     } catch(err) {
         console.log(err)
     }
@@ -65,7 +66,7 @@ export const deleteReview = (id) => async(dispatch) => {
     if (!res.ok) throw res;
 
     try{
-        dispatch(deleteOne(id))
+       return dispatch(deleteOne(id))
     } catch(err) {
         console.log(err)
     }
@@ -79,7 +80,8 @@ const reviewsReducer = (state = {}, action) => {
             newState = {...state, ...action.reviews}
             return newState;
         case ADD_ONE:
-            newState = [...state, action.review]
+            newState = {...state}
+            newState[action.review.id] = action.review
             return newState
         case DELETE_ONE:
             newState = {...state}

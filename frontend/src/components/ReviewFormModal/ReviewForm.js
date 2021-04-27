@@ -5,7 +5,7 @@ import ReactStars from 'react-rating-stars-component'
 import './ReviewForm.css'
 import { useHistory } from 'react-router'
 
-function ReviewForm({ restId }) {
+function ReviewForm({ restId, setShowModal }) {
     const history = useHistory()
     const dispatch = useDispatch()
     const user = useSelector(state => state.session.user)
@@ -23,15 +23,13 @@ function ReviewForm({ restId }) {
             restId
         }
 
+        dispatch(reviewActions.addReview(newData))
+
         setContent("")
         setRating(0)
         setTitle("")
 
-        return dispatch(reviewActions.addReview(newData))
-
-
-
-
+        setShowModal(false)
     }
 
     return (
