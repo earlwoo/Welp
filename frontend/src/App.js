@@ -8,9 +8,11 @@ import * as sessionActions from "./store/session";
 import * as restaurantActions from "./store/restaurants"
 import Navigation from "./components/Navigation";
 import Restaurants from "./components/Restaurants"
+import RestaurantDetails from "./components/RestaurantDetails"
 
 function App() {
   const restaurants = useSelector((state) => state.restaurants)
+
 
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -30,9 +32,9 @@ function App() {
           <Route exact path="/">
             <Restaurants restaurants={restaurants} />
           </Route>
-          {/* <Route path="/:restId">
-            <RestaurantDetails />
-          </Route> */}
+          <Route path="/:restId">
+            <RestaurantDetails restaurants={restaurants} />
+          </Route>
           <Route path="/signup">
             <SignupForm />
           </Route>

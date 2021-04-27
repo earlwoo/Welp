@@ -23,7 +23,7 @@ export const fetchRestaurants = () => async (dispatch) => {
                 return category.title
             })
             resObj[restaurant.id].transactions = Object.values(JSON.parse(resObj[restaurant.id].transactions))
-            resObj[restaurant.id].location = JSON.parse( resObj[restaurant.id].location)
+            resObj[restaurant.id].location = JSON.parse(resObj[restaurant.id].location)
         });
         // todo have to see what you're getting back and destructure and parse
         dispatch(setRestaurant(resObj))
