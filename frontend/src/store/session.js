@@ -26,8 +26,8 @@ export const login = ({ credential, password }) => async (dispatch) => {
         }),
     });
     const data = await response.json();
-    dispatch(setUser(data.user));
-    return response;
+    return dispatch(setUser(data.user));
+
 };
 
 export const restoreUser = () => async dispatch => {
@@ -50,8 +50,8 @@ export const signup = (user) => async (dispatch) => {
         }),
     });
     const data = await response.json();
-    dispatch(setUser(data.user));
-    return response;
+    return dispatch(setUser(data.user));
+
 };
 
 export const logout = () => async (dispatch) => {
@@ -60,6 +60,7 @@ export const logout = () => async (dispatch) => {
     });
     dispatch(removeUser());
     return response;
+
   };
 
 

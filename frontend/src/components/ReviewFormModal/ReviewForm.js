@@ -3,12 +3,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import * as reviewActions from '../../store/reviews'
 import ReactStars from 'react-rating-stars-component'
 import './ReviewForm.css'
-import { useHistory } from 'react-router'
 
 function ReviewForm({ restId, setShowModal }) {
-    const history = useHistory()
-    const dispatch = useDispatch()
     const user = useSelector(state => state.session.user)
+    const dispatch = useDispatch()
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
     const [rating, setRating] = useState(0)

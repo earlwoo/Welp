@@ -1,51 +1,54 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import './LoginForm.css'
 
 function LoginForm({ setShowModal }) {
   const dispatch = useDispatch();
+  const user = useSelector(state => state.session.user)
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
 
-    await dispatch(sessionActions.login({ credential, password })).catch(
-      async (res) => {
-        const data = await res.json();
-        if (data && data.errors) setErrors(data.errors);
-      }
-      );
-      setCredential('')
-      setPassword('')
-
-      setShowModal(false)
-
-    return
-
-  };
-
-  const handleDemo = async(e) => {
-    e.preventDefault()
-    setErrors([]);
-    setCredential('demo@user.io')
-    setPassword('password')
-
-    await dispatch(sessionActions.login({ credential, password })).catch(
+    dispatch(sessionActions.login({ credential, password })).catch(
       async (res) => {
         const data = await res.json();
         if (data && data.errors) setErrors(data.errors);
       }
     );
 
-    setCredential('')
-    setPassword('')
+    if (user) {
+      setCredential('')
+      setPassword('')
+      setShowModal(false)
+    }
 
-    setShowModal(false)
-    return
+  };
+
+  const handleDemo = (e) => {
+    e.preventDefault()
+    setErrors([]);
+
+    dispatch(sessionActions.login({
+      credential: 'demo@user.io',
+       password: 'password'
+    })).catch(
+      async (res) => {
+        const data = await res.json();
+        if (data && data.errors) setErrors(data.errors);
+      }
+    );
+
+    if (user) {
+      setCredential('')
+      setPassword('')
+      setShowModal(false)
+    }
+
   }
 
   return (
@@ -56,24 +59,25 @@ function LoginForm({ setShowModal }) {
             <li key={idx}>{error}</li>
           ))}
         </ul>
-          <input
-            type="text"
-            placeholder="Username or Email"
-            value={credential}
-            onChange={(e) => setCredential(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+        <input
+          type="text"
+          placeholder="Username or Email"
+          value={credential}
+          onChange={(e) => setCredential(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
         <button type="submit">Log In</button>
       </form>
       <button
-      onClick={handleDemo}>Demo User</button>
+        onClick={handleDemo}>Demo User
+      </button>
     </div>
   );
 }

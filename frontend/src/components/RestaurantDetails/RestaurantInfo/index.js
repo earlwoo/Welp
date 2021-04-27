@@ -1,6 +1,6 @@
 import "./index.css"
-import { useSelector } from "react-redux"
-import { useEffect } from "react"
+// import { useSelector } from "react-redux"
+// import { useEffect } from "react"
 
 
 
@@ -27,7 +27,7 @@ const RestaurantInfo = ({ restaurant }) => {
 
 
     return (
-        <div className='restaurant__info--container'>
+        <div className='restDetail__info'>
             <a href={url}>website</a>
             <div>
                 {transactionsInfo()}

@@ -17,17 +17,18 @@ function SignupFormPage({ setShowModal }) {
 
     if (sessionUser) return <Redirect to="/" />;
 
-    const handleSubmit = async(e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         if (password === confirmPassword) {
             setErrors([]);
-            await dispatch(sessionActions.signup({ firstName, lastName, email, username, password }))
+            dispatch(sessionActions.signup({ firstName, lastName, email, username, password }))
                 .catch(async (res) => {
                     const data = await res.json();
                     if (data && data.errors) setErrors(data.errors);
                 });
-            setShowModal(false)
         }
+
+        if(sessionUser) setShowModal(false)
         return setErrors(['Confirm Password field must be the same as the Password field']);
     };
 

@@ -1,1 +1,6 @@
 /* orange color of logo : #E55A32 */
+.nav__container {
+    display: flex;
+    justify-content: flex-end;
+    justify-content: space-around;
+}

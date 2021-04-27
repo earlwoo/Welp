@@ -24,12 +24,15 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">Home</NavLink>
+    <nav className="nav__container">
+      <input type="text" placeholder="search"></input>
+      <NavLink exact to="/">
+        <i className="fas fa-home"></i>
+      </NavLink>
+      <div>
         {isLoaded && sessionLinks}
-      </li>
-    </ul>
+      </div>
+    </nav>
   );
 }
 
