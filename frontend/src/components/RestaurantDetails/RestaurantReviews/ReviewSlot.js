@@ -1,13 +1,17 @@
 import { useDispatch, useSelector } from "react-redux"
+import { useState } from 'react'
 import RatingStars from "../../RatingStars"
 import * as reviewActions from "../../../store/reviews"
+import { Modal } from '../../../context/Modal';
+import EditReviewForm from './EditReviewForm'
 
 const ReviewSlot = ({ review }) => {
     //import user to see if user can edit or delete review
     const user = useSelector(state => state.session.user)
     const dispatch = useDispatch()
+    const [showModal, setShowModal] = useState(false);
 
-    const { id, title, userId, content, rating } = review
+    const { id, title, restId, userId, content, rating } = review
 
     const handleDelete = (e, id) => {
         e.preventDefault()
@@ -15,14 +19,17 @@ const ReviewSlot = ({ review }) => {
     }
 
     const userReview = () => {
-
         return (
             <>
-                <button>edit</button>
+                <button onClick={() => setShowModal(true)}>edit</button>
+                {showModal && (
+                    <Modal onClose={() => setShowModal(false)}>
+                        <EditReviewForm setShowModal={setShowModal} review={review} />
+                    </Modal>
+                )}
                 <button onClick={e => handleDelete(e, id)}>delete</button>
             </>
         )
-
     }
 
 
