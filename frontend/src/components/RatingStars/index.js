@@ -2,6 +2,8 @@ import ReactStars from "react-rating-stars-component"
 
 
 const RatingStars = ({ rating }) => {
+
+
     return (
         <>
             <ReactStars
@@ -10,7 +12,7 @@ const RatingStars = ({ rating }) => {
                 size={40}
                 value={Number(rating)}
                 isHalf={true}
-                activeColor="#DD7134"
+                activeColor={"#DD7134"}
                 color="#F8F5F1"
             />
         </>

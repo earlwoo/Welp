@@ -1,5 +1,6 @@
 import ReviewSlot from "./ReviewSlot"
 import ReviewFormModal from "../../ReviewFormModal"
+import Footer from "../../Footer"
 
 const RestaurantReviews = ( { restaurant, reviews } ) => {
 

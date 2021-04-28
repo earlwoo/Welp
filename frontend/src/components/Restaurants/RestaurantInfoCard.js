@@ -18,8 +18,8 @@ const RestaurantInfoCard = ({restaurant}) => {
                 </div>
             </div>
             <div className="restInfo__categories--container">
-                {restaurant?.categories.map(category => (
-                    <div key={restaurant.id}>{category}</div>
+                {restaurant?.categories.map((category,idx) => (
+                    <div key={idx}>{category}</div>
                 ))}
             </div>
         </div>

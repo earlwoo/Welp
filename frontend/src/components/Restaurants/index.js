@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import RestaurantInfoCard from './RestaurantInfoCard'
 import "./Restaurants.css"
 import food from "./photos/food.png"
@@ -6,6 +5,7 @@ import food1 from "./photos/food1.png"
 import food2 from "./photos/food2.png"
 import food3 from "./photos/food3.png"
 import food4 from "./photos/food4.png"
+import Footer from '../Footer'
 
 export default function Restaurants({ restaurants, searchTerm }) {
 

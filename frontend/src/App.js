@@ -2,11 +2,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
-import LoginForm from "./components/LoginFormModal/LoginForm"
-import SignupForm from "./components/SignupFormModal/SignupForm"
 import * as sessionActions from "./store/session";
 import * as restaurantActions from "./store/restaurants"
 import Navigation from "./components/Navigation";
+import Footer from "./components/Footer"
 import Restaurants from "./components/Restaurants"
 import RestaurantDetails from "./components/RestaurantDetails"
 
@@ -37,14 +36,9 @@ function App() {
           <Route path="/:restId">
             <RestaurantDetails restaurants={restaurants} />
           </Route>
-          <Route path="/signup">
-            <SignupForm />
-          </Route>
-          <Route path="/login">
-            <LoginForm />
-          </Route>
         </Switch>
       )}
+      <Footer />
     </>
   );
 }
