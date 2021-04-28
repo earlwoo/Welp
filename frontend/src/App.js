@@ -12,6 +12,8 @@ import RestaurantDetails from "./components/RestaurantDetails"
 
 function App() {
   const restaurants = useSelector((state) => state.restaurants)
+  const [searchTerm, setSearchTerm ]= useState("")
+
 
 
   const dispatch = useDispatch();
@@ -26,11 +28,11 @@ function App() {
 
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
+      <Navigation searchTerm={searchTerm} setSearchTerm={setSearchTerm} isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
           <Route exact path="/">
-            <Restaurants restaurants={restaurants} />
+            <Restaurants searchTerm={searchTerm} restaurants={restaurants} />
           </Route>
           <Route path="/:restId">
             <RestaurantDetails restaurants={restaurants} />

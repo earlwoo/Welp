@@ -11,6 +11,7 @@ const RatingStars = ({ rating }) => {
                 value={Number(rating)}
                 isHalf={true}
                 activeColor="#DD7134"
+                color="#F8F5F1"
             />
         </>
 

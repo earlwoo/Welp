@@ -28,8 +28,8 @@ module.exports = {
         type: Sequelize.TEXT
       },
       rating: {
-        defaultValue: 0,
-        type: Sequelize.INTEGER
+        defaultValue: 0.0,
+        type: Sequelize.DECIMAL(10, 1)
       },
       price: {
         type: Sequelize.STRING

@@ -4,10 +4,11 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal'
+import SearchBar from "./SearchBar"
 import logo from './welpNav.png'
 import './Navigation.css';
 
-function Navigation({ isLoaded }){
+function Navigation({ isLoaded, searchTerm, setSearchTerm }){
   const sessionUser = useSelector(state => state.session.user);
 
   let sessionLinks;
@@ -26,12 +27,14 @@ function Navigation({ isLoaded }){
 
   return (
     <nav className="nav__container">
-      <NavLink exact to="/">
-        <i className="fas fa-home"></i>
-      </NavLink>
+      <div className="nav__home">
+        <NavLink exact to="/">
+          <i className="fas fa-home"></i>
+        </NavLink>
+      </div>
       <img className='logo__img' src={logo}></img>
-      <input type="text" placeholder="search"></input>
-      <div>
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <div className="user__div">
         {isLoaded && sessionLinks}
       </div>
     </nav>
