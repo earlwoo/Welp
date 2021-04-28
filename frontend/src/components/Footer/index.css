@@ -1,4 +1,7 @@
 .footer__container {
+    font-family: Helvetica, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 5fr, 1fr;
     position: fixed;
     font-weight: 800;
     padding: 10px 10px 0px 10px;
@@ -7,5 +10,18 @@
     /* Height of the footer*/
     height: 35px;
     background-color: lightgrey;
-    opacity: .6;
+    opacity: .5;
+    cursor: pointer;
+}
+
+.footer__devInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 500px;
+    grid-column-start:32;
+}
+
+.fab {
+    font-size: 32px;
 }
