@@ -11,7 +11,7 @@ const ReviewSlot = ({ review }) => {
     const dispatch = useDispatch()
     const [showModal, setShowModal] = useState(false);
 
-    const { id, title, restId, userId, content, rating } = review
+    const { id, title, userId, content, rating } = review
 
     const handleDelete = (e, id) => {
         e.preventDefault()

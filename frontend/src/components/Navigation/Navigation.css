@@ -3,4 +3,33 @@
     display: flex;
     justify-content: flex-end;
     justify-content: space-around;
+    height: 75px;
+    position: relative;
+    z-index: 2;
+}
+
+.logo__img {
+    height: 75px;
+}
+
+
+.nav__user {
+    height: 75px;
+    font-size: 50px;
+    background-color: transparent;
+    opacity: .3;
+    margin-left: auto;
+    border: none;
+    cursor: pointer;
+}
+
+
+.profile-dropdown{
+    position:absolute;
+    display: flex;
+    background-color: tomato;
+    flex-direction: column;
+    border-radius: 5px;
+
+    margin-right: 30px;
 }

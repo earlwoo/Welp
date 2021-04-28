@@ -22,14 +22,13 @@ router.post('/', asyncHandler(async (req, res) => {
 }))
 
 router.post('/:id', asyncHandler(async (req, res) => {
-    const { id, title, content, rating, userId, restId } = req.body
-    const review = await Review.findByPk(id)
+    const { id, title, content, rating } = req.body
+    await Review.update({title, content, rating,},{where: {
+        id
+    }})
 
     try {
-        const updatedReview = await review.update({title, content, rating})
-        // const addedReview = await Review.update({
-        //     title, content, rating
-        // })
+        const updatedReview = await Review.findByPk(id)
         res.json(updatedReview)
     } catch(err) {
         console.log(err)

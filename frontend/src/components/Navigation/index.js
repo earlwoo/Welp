@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal'
+import logo from './welpNav.png'
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
@@ -25,10 +26,11 @@ function Navigation({ isLoaded }){
 
   return (
     <nav className="nav__container">
-      <input type="text" placeholder="search"></input>
       <NavLink exact to="/">
         <i className="fas fa-home"></i>
       </NavLink>
+      <img className='logo__img' src={logo}></img>
+      <input type="text" placeholder="search"></input>
       <div>
         {isLoaded && sessionLinks}
       </div>

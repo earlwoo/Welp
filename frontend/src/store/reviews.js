@@ -88,7 +88,8 @@ export const editReview = (review) => async(dispatch) => {
     if(!res.ok) throw res
     try {
         let newReview =  await res.json()
-        dispatch(editOne(newReview))
+        console.log("newReview", newReview)
+        return dispatch(editOne(newReview))
     } catch (err) {
 
     }

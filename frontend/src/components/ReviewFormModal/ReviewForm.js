@@ -54,7 +54,7 @@ function ReviewForm({ restId, setShowModal }) {
                 emptyIcon={<i className="far fa-star"></i>}
                 halfIcon={<i className="fa fa-star-half-alt"></i>}
                 fullIcon={<i className="fa fa-star"></i>}
-                activeColor="#E55A32"
+                activeColor="#DD7134"
             />
             <button>add review</button>
         </form>
