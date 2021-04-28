@@ -21,6 +21,21 @@ router.post('/', asyncHandler(async (req, res) => {
     }
 }))
 
+router.post('/:id', asyncHandler(async (req, res) => {
+    const { id, title, content, rating, userId, restId } = req.body
+    const review = await Review.findByPk(id)
+
+    try {
+        const updatedReview = await review.update({title, content, rating})
+        // const addedReview = await Review.update({
+        //     title, content, rating
+        // })
+        res.json(updatedReview)
+    } catch(err) {
+        console.log(err)
+    }
+}))
+
 router.delete('/', asyncHandler(async(req, res) => {
     const { id } = req.body
     await Review.destroy({
