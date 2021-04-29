@@ -16,7 +16,7 @@ export default function Restaurants({ restaurants, searchTerm }) {
 
     const foodPhotos = [food, food1, food2, food3, food4]
     const random = Math.floor(Math.random () * 5)
-
+    const randomImg = foodPhotos[random]
 
 
     let searchSet = new Set()
@@ -42,7 +42,7 @@ export default function Restaurants({ restaurants, searchTerm }) {
     return (
         <div className="restInfo__body">
             <div className="home__photo--container">
-                <img className="home__photo--img" src={foodPhotos[random]}>
+                <img className="home__photo--img" src={randomImg}>
                 </img>
 
             </div>

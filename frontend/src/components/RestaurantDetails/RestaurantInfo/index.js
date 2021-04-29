@@ -13,13 +13,19 @@ const RestaurantInfo = ({ restaurant }) => {
             <>
                 <div className="transactions__text">{
                     transactions.includes('pickup') &&
-                    <i className="fas fa-walking"></i>
-                }Take Out
+                    <div>
+                        <i className="fas fa-walking"></i>
+                        Take Out
+                    </div>
+                }
                 </div>
                 <div className="transactions__text">{
                     transactions.includes('delivery') &&
-                    <i className="fas fa-truck"></i>
-                }Delivery
+                    <div>
+                        <i className="fas fa-truck"></i>
+                        Delivery
+                    </div>
+                }
                 </div>
             </>
         )
@@ -33,8 +39,15 @@ const RestaurantInfo = ({ restaurant }) => {
                 {transactionsInfo()}
             </div>
             <div className="phone__div">
-                <i class="fas fa-phone-volume"></i>
+                <i className="fas fa-phone-volume"></i>
                 {phoneNum}
+            </div>
+            <p className="address_text">Address:</p>
+            <div className="address">
+                <div>{restaurant.location.address1},</div>
+                <div>{restaurant?.location.address2}</div>
+                <div>{restaurant.location.city} {restaurant.location.state}, {restaurant.location.zip_code}</div>
+
             </div>
         </div>
     )

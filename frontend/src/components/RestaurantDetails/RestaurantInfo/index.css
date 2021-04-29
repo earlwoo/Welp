@@ -1,10 +1,10 @@
 .restDetail__info {
-    height: 200px; /* 100% Full-height */
+    height: 300px; /* 100% Full-height */
   width: 300px; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 625px; /* Stay at the top */
-  right: 20px; /* Black*/
+  right: 45px; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide
@@ -23,9 +23,11 @@
     display: flex;
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 10px;
+    padding: 15px 10px 20px 10px;
     font-weight: 700;
     color: #DD7134;
+    opacity: .8;
+
 
 }
 
@@ -36,11 +38,13 @@
     align-items: center;
     justify-content: space-around;
     border-bottom: 2px dashed black;
+    padding-bottom: 7px;
 }
 
 .fas.fa-walking, .fas.fa-truck {
     color: lightslategrey;
     font-size: 30px;
+    padding-left: 10px;
     padding-right: 10px;
     opacity: .6;
 }
@@ -49,6 +53,7 @@
     font-size: 35px;
     color: lightslategrey;
     opacity: .6;
+    padding-left: 10px;
 }
 
 .transactions__text {
@@ -64,6 +69,26 @@
     padding: 20px 15px 5px 15px;
     font-weight: 700;
     color: lightslategrey;
+    border-bottom: 2px dashed black;
+    padding-bottom: 7px;
+}
 
+.address_text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    padding-left: 20px;
+    color: #DD7134;
+    opacity: .8;
+}
 
+.address {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 15px;
+    font-size: 18px;
+    color:lightslategray;
+    font-weight: 530;
+    opacity: .8;
 }

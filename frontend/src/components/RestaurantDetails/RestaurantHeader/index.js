@@ -19,12 +19,12 @@ const RestaurantHeader = () => {
             <div className='header__star' >
                 {restaurant && <RatingStars rating={restaurant && restaurant.rating}/>}
             </div>
-           <ul className='header__categories'>
+           <div className='header__categories'>
                {restaurant?.categories.map(category => (
-                    <li key={category} className="header__listitems">{category}</li>
-               ))}
-               {restaurant && <li className="header__listitems">{restaurant?.price}</li>}
-           </ul>
+                   <div key={category} className="header__listitems">{category}</div>
+                   ))}
+                {restaurant && <div className="header__listitems">{restaurant?.price}</div>}
+           </div>
 
         </div>
 

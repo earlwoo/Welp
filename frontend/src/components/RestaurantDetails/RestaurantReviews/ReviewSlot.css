@@ -1,0 +1,10 @@
+.review__container {
+    padding-left: 20px;
+    margin-left: 20px;
+    border: 3px solid red;
+    
+}
+
+.review__header {
+    padding-left: 20px;
+}

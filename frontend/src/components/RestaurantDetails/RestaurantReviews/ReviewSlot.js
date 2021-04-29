@@ -4,6 +4,7 @@ import RatingStars from "../../RatingStars"
 import * as reviewActions from "../../../store/reviews"
 import { Modal } from '../../../context/Modal';
 import EditReviewForm from './EditReviewForm'
+import "./ReviewSlot"
 
 const ReviewSlot = ({ review }) => {
     //import user to see if user can edit or delete review
@@ -11,7 +12,9 @@ const ReviewSlot = ({ review }) => {
     const dispatch = useDispatch()
     const [showModal, setShowModal] = useState(false);
 
-    const { id, title, userId, content, rating } = review
+    const { id, title, userId, content, rating, updatedAt} = review
+
+    let reviewDate = updatedAt.split('T')[0]
 
     const handleDelete = (e, id) => {
         e.preventDefault()
@@ -21,7 +24,7 @@ const ReviewSlot = ({ review }) => {
     const userReview = () => {
         return (
             <>
-                <button onClick={() => setShowModal(true)}>edit</button>
+                <button className="" onClick={() => setShowModal(true)}>edit</button>
                 {showModal && (
                     <Modal onClose={() => setShowModal(false)}>
                         <EditReviewForm setShowModal={setShowModal} review={review} />
@@ -34,18 +37,20 @@ const ReviewSlot = ({ review }) => {
 
 
     return (
-        <div>Review Section
+        <div className="review__container">Review Section
+            <div className="review__header">
+                <RatingStars rating={rating} />
+                {reviewDate}
+                {user && user.id === userId ? userReview() : null}
+            </div>
+            <div>
+
+            </div>
             <div>
                 {title}
             </div>
             <div>
-                {user && user.id === userId ? userReview() : null}
-            </div>
-            <div>
                 {content}
-            </div>
-            <div>
-                <RatingStars rating={rating} />
             </div>
 
         </div>

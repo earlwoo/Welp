@@ -15,7 +15,7 @@
 
     /* //object-fit contain */
     /* object-fit-contain  */
-    
+
 
 }
 
@@ -51,7 +51,8 @@
     flex-direction: row;
     justify-content: space-between;
     max-width: 400px;
-    margin-left: 120px;
+    margin-left: 140px;
+    padding: 20px;
 }
 
 .header__listitems {
