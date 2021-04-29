@@ -1,8 +1,8 @@
 // frontend/src/store/session.js
 import { csrfFetch } from './csrf';
 
-const SET_USER = 'session/setUser';
-const REMOVE_USER = 'session/removeUser';
+const SET_USER = 'session/SET_USER';
+const REMOVE_USER = 'session/REMOVE_USER';
 
 const setUser = (user) => {
     return {

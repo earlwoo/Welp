@@ -22,23 +22,38 @@ module.exports = {
 
       bizArr = businesses.map(biz => {
         const {
+          id,
           name,
           image_url,
-          url,
           rating,
           categories,
           transactions,
           price,
           location,
-          display_phone
+          display_phone,
+          coordinates
         } = biz
 
-        return { name, imageUrl: image_url, url, rating,
+        const singleBiz = await fetch(`https://api.yelp.com/v3/businesses/${id}`, {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${API_KEY}`,
+            "Content-type": "application/json",
+          },
+        })
+
+        let result = singleBiz.json()
+
+        const { photos } = result
+
+        return { name, imageUrl: image_url, rating,
           categories: JSON.stringify(categories),
           transactions: JSON.stringify({...transactions}),
           price, rating,
           location: JSON.stringify(location),
-          phoneNum: display_phone
+          phoneNum: display_phone,
+          coordinates: JSON.stringify(coordinates),
+          photos,
         }
 
       })
@@ -46,8 +61,6 @@ module.exports = {
     } catch(err) {
     console.log(err)
     }
-
-    // display_address: [...display_address]
 
     return queryInterface.bulkInsert('Restaurants', bizArr, {});
 },

@@ -42,6 +42,13 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
+      coordinates: {
+        allowNull:false,
+        type: Sequelize.TEXT
+      },
+      photos: {
+        type: Sequelize.ARRAY(Sequelize.STRING)
+      },
       createdAt: {
         allowNull: false,
         defaultValue: Sequelize.fn('now'),

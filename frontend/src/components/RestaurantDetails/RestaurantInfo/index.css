@@ -1,10 +1,10 @@
 .restDetail__info {
-    height: 300px; /* 100% Full-height */
-  width: 300px; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
+    height: 375px; /* 100% Full-height */
+  width: 375px; /* 0 width - change this with JavaScript */
+  position: relative; /* Stay in place */
   z-index: 1; /* Stay on top */
-  top: 625px; /* Stay at the top */
-  right: 45px; /* Black*/
+   /* Stay at the top */
+  ; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import * as restaurantActions from "./store/restaurants"
+import * as userActions from "./store/users"
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer"
 import Restaurants from "./components/Restaurants"
@@ -23,6 +24,10 @@ function App() {
 
   useEffect(() => {
     dispatch(restaurantActions.fetchRestaurants())
+  }, [dispatch])
+
+  useEffect(() => {
+    dispatch(userActions.getUsers())
   }, [dispatch])
 
   return (
