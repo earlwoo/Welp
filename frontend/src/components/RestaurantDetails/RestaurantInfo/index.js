@@ -11,15 +11,15 @@ const RestaurantInfo = ({ restaurant }) => {
     let transactionsInfo = () => {
         return (
             <>
-                <div>{
+                <div className="transactions__text">{
                     transactions.includes('pickup') &&
-                    <i className="fas fa-walking">Take Out</i>
-                }
+                    <i className="fas fa-walking"></i>
+                }Take Out
                 </div>
-                <div>{
+                <div className="transactions__text">{
                     transactions.includes('delivery') &&
-                    <i className="fas fa-truck">Delivery</i>
-                }
+                    <i className="fas fa-truck"></i>
+                }Delivery
                 </div>
             </>
         )
@@ -28,11 +28,12 @@ const RestaurantInfo = ({ restaurant }) => {
 
     return (
         <div className='restDetail__info'>
-            <a href={url}>website</a>
-            <div>
+            <div className="info_text">Restaurant Does</div>
+            <div className="restDetail__transactions">
                 {transactionsInfo()}
             </div>
-            <div>
+            <div className="phone__div">
+                <i class="fas fa-phone-volume"></i>
                 {phoneNum}
             </div>
         </div>

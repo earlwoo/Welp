@@ -4,7 +4,8 @@ const Footer = () => {
     return (
         <div className="footer__container">
             <a href="https://github.com/earlwoo/Welp">
-                Welp, a Yelp Clone
+                <i class="fab fa-github"></i>
+                Welp Repository
             </a>
             <div className="footer__devInfo">
                 <div>

@@ -1,12 +1,69 @@
 .restDetail__info {
     height: 200px; /* 100% Full-height */
-  width: 100px; /* 0 width - change this with JavaScript */
+  width: 300px; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  right: 0;
-  background-color: transparent; /* Black*/
+  top: 625px; /* Stay at the top */
+  right: 20px; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide
+  in the sidenav */
+  border: 1px dashed #0073bb;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: rgb(251, 254, 255);
+
+
+}
+
+.info_text {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    font-weight: 700;
+    color: #DD7134;
+
+}
+
+
+.restDetail__transactions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 2px dashed black;
+}
+
+.fas.fa-walking, .fas.fa-truck {
+    color: lightslategrey;
+    font-size: 30px;
+    padding-right: 10px;
+    opacity: .6;
+}
+
+.fas.fa-phone-volume {
+    font-size: 35px;
+    color: lightslategrey;
+    opacity: .6;
+}
+
+.transactions__text {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.phone__div {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px 5px 15px;
+    font-weight: 700;
+    color: lightslategrey;
+
+
 }
