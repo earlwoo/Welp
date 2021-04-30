@@ -3,7 +3,6 @@ module.exports = (sequelize, DataTypes) => {
   const Restaurant = sequelize.define('Restaurant', {
     name: DataTypes.STRING,
     imageUrl: DataTypes.STRING,
-    // url: DataTypes.STRING,
     categories: DataTypes.TEXT,
     transactions: DataTypes.TEXT,
     rating: DataTypes.DECIMAL,
