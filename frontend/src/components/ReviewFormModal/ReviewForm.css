@@ -6,13 +6,17 @@
     width: 150px;
     margin-left: 50%;
     border: none;
-    font-size: 18px;
-    color: honeydew;
+    font-size: 16px;
+    color: #DD7134;
     font-weight: 600;
-    background-color: #DD7134;
+    background: transparent;
     border-radius: 50px;
-    opacity: .75;
+    opacity: 9;
     cursor: pointer;
+}
+
+.addReview-btn:disabled {
+    opacity: .3;
 }
 
 .add-review__form-container {

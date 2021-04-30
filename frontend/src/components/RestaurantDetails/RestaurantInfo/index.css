@@ -1,5 +1,5 @@
 .restDetail__info {
-    height: 375px; /* 100% Full-height */
+    height: 300px; /* 100% Full-height */
   width: 375px; /* 0 width - change this with JavaScript */
   position: absolute; /* Stay in place */
   overflow-x: hidden; /* Disable horizontal scroll */
@@ -76,6 +76,7 @@
     padding-left: 20px;
     color: #DD7134;
     opacity: .8;
+    margin-top: 15px;
 }
 
 .address {

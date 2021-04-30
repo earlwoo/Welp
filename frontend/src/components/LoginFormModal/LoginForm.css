@@ -33,6 +33,7 @@
 .submit{
     border: none;
     font-size: 23px;
+    font-weight: 600;
     width: 50%;
     height: 50px;
     margin-left: auto;

@@ -25,7 +25,7 @@ module.exports = {
     ]
 
 
-    for(let i = 0; i < 50; i++) {
+    for(let i = 0; i < 100; i++) {
         reviewArr.push({
           title: titlesArr[getRandom(0, 4)],
           userId: getRandom(1, 4),

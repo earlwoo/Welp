@@ -5,7 +5,7 @@
     font-weight: 800;
     padding: 10px 10px 0px 10px;
     box-shadow: 0 4px 16px rgb(0 0 0 / 20%);
-
+    z-index: 2;
     bottom: 0;
     width: 100%;
     /* Height of the footer*/
