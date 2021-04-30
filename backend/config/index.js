@@ -12,6 +12,6 @@ module.exports = {
       expiresIn: process.env.JWT_EXPIRES_IN,
     },
     yelpAPI: {
-      apiKey: process.env.API_KEY
+      apiKey: process.env.REACT_APP_YELP_API
     }
   };

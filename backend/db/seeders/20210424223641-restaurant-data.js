@@ -1,6 +1,6 @@
 'use strict';
 const fetch = require('node-fetch');
-const { apiKey } = require('../../config')
+const { apiKey } = require('../../config').yelpAPI
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
