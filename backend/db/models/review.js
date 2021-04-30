@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     userId: DataTypes.INTEGER,
     restId: DataTypes.INTEGER,
-    content: DataTypes.STRING,
+    content: DataTypes.STRING(500),
     rating: DataTypes.INTEGER
   }, {});
   Review.associate = function(models) {
