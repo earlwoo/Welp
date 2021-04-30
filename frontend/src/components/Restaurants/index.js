@@ -19,14 +19,14 @@ export default function Restaurants({ restaurants, searchTerm }) {
     let randomImg = foodPhotos[random]
 
 
-    let randomimg;
-    useEffect(() => {
-        const random = Math.floor(Math.random () * 5)
-        randomimg = foodPhotos[random]
-        console.log("inside useeffect", randomImg)
+    // let randomimg;
+    // useEffect(() => {
+    //     const random = Math.floor(Math.random () * 5)
+    //     randomimg = foodPhotos[random]
+    //     console.log("inside useeffect", randomImg)
 
 
-    }, [])
+    // }, [])
 
     let searchSet = new Set()
 
