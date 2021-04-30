@@ -5,6 +5,7 @@ import food1 from "./photos/food1.png"
 import food2 from "./photos/food2.png"
 import food3 from "./photos/food3.png"
 import food4 from "./photos/food4.png"
+import { useEffect } from 'react'
 
 export default function Restaurants({ restaurants, searchTerm }) {
 
@@ -15,8 +16,17 @@ export default function Restaurants({ restaurants, searchTerm }) {
 
     const foodPhotos = [food, food1, food2, food3, food4]
     const random = Math.floor(Math.random () * 5)
-    const randomImg = foodPhotos[random]
+    let randomImg = foodPhotos[random]
 
+
+    let randomimg;
+    useEffect(() => {
+        const random = Math.floor(Math.random () * 5)
+        randomimg = foodPhotos[random]
+        console.log("inside useeffect", randomImg)
+
+
+    }, [])
 
     let searchSet = new Set()
 
@@ -41,7 +51,7 @@ export default function Restaurants({ restaurants, searchTerm }) {
     return (
         <div className="restInfo__body">
             <div className="home__photo--container">
-                <img className="home__photo--img" src={randomImg}>
+                <img className="home__photo--img" src={randomImg ? randomImg : null}>
                 </img>
 
             </div>

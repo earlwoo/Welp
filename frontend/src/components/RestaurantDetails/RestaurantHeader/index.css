@@ -61,10 +61,12 @@
     font-weight: 1000;
     color: whitesmoke;
     text-shadow:
-		-1px -1px 0 #DD7134,
-		1px -1px 0 #DD7134,
-		-1px 1px 0 #DD7134,
-		1px 1px 0 #DD7134;
+		0px -0px 0 rgb(0 0 0 / 60%),
+		2px -0px 0 rgb(0 0 0 / 60%),
+		0px 2px 0 rgb(0 0 0 / 60%),
+		2px 2px 0 rgb(0 0 0 / 60%);
+
+
     margin-left: 150px;
 
 }
@@ -81,6 +83,7 @@
     height: 50px;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 4px 16px rgb(0 0 0 / 20%);
 }
 
 .header__categories {
@@ -100,4 +103,5 @@
     background: #DD7134;
     padding: 5px;
     border-radius: 5px;
+    box-shadow: 4 4px 16px rgb(0 0 0 / 20%);
 }

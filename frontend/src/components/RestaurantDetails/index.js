@@ -18,6 +18,10 @@ const RestaurantDetails = ({ restaurants }) => {
         dispatch(reviewActions.fetchReviews())
     }, [dispatch])
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
     const restaurant = restaurants[restId]
     let restReviews = []
     for (let key in reviews) {

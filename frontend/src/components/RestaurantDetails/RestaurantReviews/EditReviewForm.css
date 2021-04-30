@@ -1,5 +1,5 @@
 .addReview-btn {
-    height: 100px;
+    height: 50px;
     width: 150px;
     margin-left: 50%;
     border: none;
@@ -28,6 +28,15 @@
     width: 500px;
     padding-left: 20px;
 
+}
+
+.textarea {
+    box-shadow: 0 4px 16px rgb(0 0 0 / 20%);
+
+}
+
+.textarea:focus{
+    outline: none;
 }
 
 .add-review__title{
@@ -71,6 +80,8 @@
     padding-right: 20px;
     margin-bottom: 15px;
     color: #009dff;
+    opacity: .3;
+    border: 1px solid red;
 
 
 }

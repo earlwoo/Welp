@@ -43,6 +43,7 @@ function ReviewForm({ restId, setShowModal }) {
                     className="add-review__title"
                 ></input>
                 <textarea
+                className="textarea"
                     rows="10" cols="40"
                     placeholder="write your review"
                     type="textarea"

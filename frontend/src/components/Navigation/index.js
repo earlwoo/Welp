@@ -10,6 +10,7 @@ import './Navigation.css';
 
 function Navigation({ isLoaded, searchTerm, setSearchTerm }){
   const sessionUser = useSelector(state => state.session.user);
+  const users = useSelector(state=> state.users)
 
   let sessionLinks;
   if (sessionUser) {
@@ -24,6 +25,11 @@ function Navigation({ isLoaded, searchTerm, setSearchTerm }){
       </>
     );
   }
+  let user
+  if(users && sessionUser) {
+    user = users[sessionUser.id]
+  }
+
 
   return (
     <nav className="nav__container">
@@ -34,7 +40,9 @@ function Navigation({ isLoaded, searchTerm, setSearchTerm }){
       </div>
       <img className='logo__img' src={logo}></img>
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+
       <div className="user__div">
+        <div className="user_welcome">{user?.firstName}</div>
         {isLoaded && sessionLinks}
       </div>
     </nav>

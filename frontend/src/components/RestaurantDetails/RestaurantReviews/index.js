@@ -7,7 +7,7 @@ const RestaurantReviews = ( { restaurant, reviews } ) => {
 
     return (
         <span className="reviews__container">
-            <h2>Reviews</h2>
+            <div className="howisit">Welpers say</div>
             {reviews.map((review, idx) => (
                 <ReviewSlot key={idx} review={review}>{review.content}</ReviewSlot>
             ))}

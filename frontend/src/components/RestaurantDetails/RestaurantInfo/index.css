@@ -4,7 +4,7 @@
   position: absolute; /* Stay in place */
   overflow-x: hidden; /* Disable horizontal scroll */
 
-  border: 1px dashed #0073bb;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 20%);
     border-radius: 5px;
     display: flex;
     flex-direction: column;

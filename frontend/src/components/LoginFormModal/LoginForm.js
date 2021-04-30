@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import './LoginForm.css'
+import welp from "../../components/Navigation/welpNav.png"
 
 function LoginForm({ setShowModal }) {
   const dispatch = useDispatch();
@@ -35,7 +36,7 @@ function LoginForm({ setShowModal }) {
 
     dispatch(sessionActions.login({
       credential: 'demo@user.io',
-       password: 'password'
+      password: 'password'
     })).catch(
       async (res) => {
         const data = await res.json();
@@ -52,7 +53,12 @@ function LoginForm({ setShowModal }) {
   }
 
   return (
-    <div className='login__modal--show'>
+    <div className='login--container'>
+      <div className="welpImg">
+        <img src={welp}></img>
+      </div>
+      <div
+        className="login-text">Log In</div>
       <form className='login__form' onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => (
@@ -60,6 +66,7 @@ function LoginForm({ setShowModal }) {
           ))}
         </ul>
         <input
+        className="input-field"
           type="text"
           placeholder="Username or Email"
           value={credential}
@@ -67,15 +74,17 @@ function LoginForm({ setShowModal }) {
           required
         />
         <input
+        className="input-field"
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit">Log In</button>
+        <button className="submit" type="submit">Log In</button>
       </form>
       <button
+      className="submit demo"
         onClick={handleDemo}>Demo User
       </button>
     </div>

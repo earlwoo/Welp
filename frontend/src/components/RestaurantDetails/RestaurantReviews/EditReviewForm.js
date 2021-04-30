@@ -13,7 +13,7 @@ const EditReviewForm = ({ setShowModal, review }) => {
 
     useEffect(() => {
         setTitle(review.title)
-        setContent(review.title)
+        setContent(review.content)
         setRating(Number(review.rating))
 
     }, [])
@@ -48,8 +48,9 @@ const EditReviewForm = ({ setShowModal, review }) => {
                     className="add-review__title"
                 ></input>
                 <textarea
+                    className="textarea"
                     rows="10" cols="40"
-                    placeholder={review?.title}
+                    placeholder={review?.content}
                     type="textarea"
                     value={content}
                     onChange={e => setContent(e.target.value)}
@@ -70,11 +71,11 @@ const EditReviewForm = ({ setShowModal, review }) => {
                         color="lightgrey"
                     />
                 </div>
-                <button>edit review</button>
+                <button className="submit-review__btn">edit review</button>
             </form>
             <div
             className="addReview_logo-container">
-                <div className="thank-you">Thank you for using</div>
+                <span className="thank-you">Thank you for using</span>
                 <img className="addReview_logo" src={welp} ></img>
             </div>
         </div>

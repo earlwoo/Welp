@@ -1,4 +1,68 @@
+/* #009dff */
+
+.sign-up--container{
+    width: 500px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
 .signup__form {
     display: flex;
     flex-direction: column;
+    border-radius: 20px;
+    justify-content: space-evenly;
+    width: 75%;
+    padding-bottom: 15px;
+
+}
+
+.signin__btn{
+    background-color: transparent;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 19px;
+    color: #DD7134;
+}
+
+.signin__btn:hover {
+    background-color: rgb(250, 244, 244);
+
+}
+
+.welpImg {
+    display: flex;
+    justify-content: center;
+    /* margin-top: 25px; */
+}
+
+.input-field{
+   padding: 10px;
+   margin-bottom: 15px;
+   border-radius:3px;
+}
+
+.submit{
+    border: none;
+    font-size: 23px;
+    width: 50%;
+    height: 50px;
+    margin-left: auto;
+    border-radius: 6px;
+    color: #DD7134;
+    cursor: pointer;
+}
+
+.sign_up-text{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #009dff;
+    font-size: 36px;
+    opacity: .5;
+    font-weight: 1200;
+    height: 60px;
 }

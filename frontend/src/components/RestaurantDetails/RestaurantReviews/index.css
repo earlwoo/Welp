@@ -1,5 +1,17 @@
+/* #009dff */
+
 .reviews__container {
     display: flex;
     flex-direction: column;
-    border: 2px solid black;
+    /* border: 2px solid black; */
+}
+
+.howisit{
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    margin-left: 500px;
+    color: rgba(43,39,60,1);
+    margin-top: 20px;
+
 }

@@ -6,7 +6,7 @@ import "./index.css"
 
 const RestaurantInfo = ({ restaurant }) => {
     if (!restaurant) return null
-    const { url, transactions, phoneNum } = restaurant
+    const { transactions, phoneNum } = restaurant
 
     let transactionsInfo = () => {
         return (

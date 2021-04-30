@@ -1,7 +1,6 @@
 'use strict';
 const fetch = require('node-fetch');
-
-const API_KEY = "yp8e_ukuTNrRLpFjEH5C2gtF7BO5AHt_HXhh5a6sdE9RQmPbxVcvfdaLR2she3o284IXFUvvywEYfjj2ag8qlv--hJ4IjHkkuV38ln9L-yUUM9Y3mASK--Hj12GEYHYx"
+const { apiKey } = require('../../config')
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -9,7 +8,7 @@ module.exports = {
     const res = await fetch('https://api.yelp.com/v3/businesses/search?term=restaurant&location=philadelphia&sort_by=rating&limit=30', {
       method: 'GET',
       headers: {
-        Authorization: `Bearer ${API_KEY}`,
+        Authorization: `Bearer ${apiKey}`,
         "Content-type": "application/json",
       },
     })
@@ -53,7 +52,7 @@ module.exports = {
       let res = await fetch(`https://api.yelp.com/v3/businesses/${business.id}`, {
           method: 'GET',
           headers: {
-            Authorization: `Bearer ${API_KEY}`,
+            Authorization: `Bearer ${apiKey}`,
             "Content-type": "application/json",
           },
         })
