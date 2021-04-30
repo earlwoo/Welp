@@ -12,21 +12,31 @@ const RestaurantHeader = () => {
 
 
     return (
-        <div className='restDetail__Header' style={{
-            backgroundImage: `url(${restaurant?.imageUrl})`
-        }}>
-            <div className='header__name'>{restaurant?.name}</div>
-            <div className='header__star' >
-                {restaurant && <RatingStars rating={restaurant && restaurant.rating}/>}
+
+        <div>
+            <div className="restDetail__header-images-container">
+            <div className="restDetail__headerText">
+                <div className='header__name'>{restaurant?.name}</div>
+                <div className='header__star' >
+                    {restaurant && <RatingStars rating={restaurant && restaurant.rating} />}
+                </div>
+                <div className='header__categories'>
+                    {restaurant?.categories.map(category => (
+                        <div key={category} className="header__listitems">{category}</div>
+                    ))}
+                    {restaurant && <div className="header__listitems">{restaurant?.price}</div>}
+                </div>
             </div>
-           <div className='header__categories'>
-               {restaurant?.categories.map(category => (
-                   <div key={category} className="header__listitems">{category}</div>
-                   ))}
-                {restaurant && <div className="header__listitems">{restaurant?.price}</div>}
-           </div>
+                <div className='restDetail__Header'>
+                    <img className="photo1" src={restaurant?.photos[0]}></img>
+                    <img className="photo2" src={restaurant?.photos[1]}></img>
+                    <img className="photo3" src={restaurant?.photos[2]}></img>
+                </div>
+            </div>
+
 
         </div>
+
 
     )
 

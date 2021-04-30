@@ -5,7 +5,6 @@ import food1 from "./photos/food1.png"
 import food2 from "./photos/food2.png"
 import food3 from "./photos/food3.png"
 import food4 from "./photos/food4.png"
-import Footer from '../Footer'
 
 export default function Restaurants({ restaurants, searchTerm }) {
 
@@ -46,7 +45,7 @@ export default function Restaurants({ restaurants, searchTerm }) {
                 </img>
 
             </div>
-            <h1 className="home__text">The Best Restaurants in Your Area</h1>
+            <h1 className="home__text">The Best Restaurants in Philadelphia</h1>
             <div className="restInfo__container">
                 {mainDisplay.map(restaurant => {
                     return <RestaurantInfoCard key={restaurant.id} restaurant={restaurant}/>

@@ -5,7 +5,7 @@ const API_KEY = "yp8e_ukuTNrRLpFjEH5C2gtF7BO5AHt_HXhh5a6sdE9RQmPbxVcvfdaLR2she3o
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    let bizArr = [];
+
     const res = await fetch('https://api.yelp.com/v3/businesses/search?term=restaurant&location=philadelphia&sort_by=rating&limit=30', {
       method: 'GET',
       headers: {
@@ -15,12 +15,11 @@ module.exports = {
     })
 
     if (!res.ok) throw res
-
+    let bizArr = [];
     try {
       let businesses = await res.json()
       businesses = businesses.businesses
-
-      bizArr = businesses.map(biz => {
+      bizArr = businesses.map((biz) => {
         const {
           id,
           name,
@@ -34,26 +33,13 @@ module.exports = {
           coordinates
         } = biz
 
-        const singleBiz = await fetch(`https://api.yelp.com/v3/businesses/${id}`, {
-          method: 'GET',
-          headers: {
-            Authorization: `Bearer ${API_KEY}`,
-            "Content-type": "application/json",
-          },
-        })
-
-        let result = singleBiz.json()
-
-        const { photos } = result
-
-        return { name, imageUrl: image_url, rating,
+        return {id, name, imageUrl: image_url, rating,
           categories: JSON.stringify(categories),
           transactions: JSON.stringify({...transactions}),
           price, rating,
           location: JSON.stringify(location),
           phoneNum: display_phone,
           coordinates: JSON.stringify(coordinates),
-          photos,
         }
 
       })
@@ -62,6 +48,22 @@ module.exports = {
     console.log(err)
     }
 
+    for (let i = 0; i < bizArr.length; i++) {
+      let business = bizArr[i];
+      let res = await fetch(`https://api.yelp.com/v3/businesses/${business.id}`, {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${API_KEY}`,
+            "Content-type": "application/json",
+          },
+        })
+
+        let { photos } = await res.json()
+        bizArr[i].photos = JSON.stringify(photos)
+        delete bizArr[i].id
+
+        setTimeout(()=>{}, 2000)
+    }
     return queryInterface.bulkInsert('Restaurants', bizArr, {});
 },
 

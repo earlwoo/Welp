@@ -46,7 +46,7 @@ const ReviewSlot = ({ review }) => {
                 <div className="review__user">
                     {reviewUser?.firstName} {reviewUser?.lastName}
                 </div>
-                {user.id === userId ? userReview() : null}
+                {user?.id === userId ? userReview() : null}
             </div>
             <div className="review__star-rating">
                 <RatingStars rating={rating} />

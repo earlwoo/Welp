@@ -11,3 +11,13 @@
     flex-direction: column;
     border-radius: 20px;
 }
+
+.login__btn{
+    background-color: transparent;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-right: 5px solid orange;
+    color: #DD7134;
+}

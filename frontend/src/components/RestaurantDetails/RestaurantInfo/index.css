@@ -1,20 +1,17 @@
 .restDetail__info {
     height: 375px; /* 100% Full-height */
   width: 375px; /* 0 width - change this with JavaScript */
-  position: relative; /* Stay in place */
-  z-index: 1; /* Stay on top */
-   /* Stay at the top */
-  ; /* Black*/
+  position: absolute; /* Stay in place */
   overflow-x: hidden; /* Disable horizontal scroll */
-  /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide
-  in the sidenav */
+
   border: 1px dashed #0073bb;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     background-color: rgb(251, 254, 255);
+
+    right: 20%;
 
 
 }

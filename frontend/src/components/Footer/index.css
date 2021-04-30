@@ -5,26 +5,41 @@
     position: fixed;
     font-weight: 800;
     padding: 10px 10px 0px 10px;
+
     bottom: 0;
     width: 100%;
     /* Height of the footer*/
-    height: 35px;
-    background-color: lightgrey;
-    opacity: .5;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 9.;
+    align-items: center;
 }
 
+.foot_text {
+    font-weight: 600;
+    color: #DD7134;
+}
 .footer__devInfo {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: center;
     width: 500px;
     grid-column-start:32;
 }
 
 .fab {
     font-size: 32px;
+    color: #DD7134;
 }
 
 .fab.fa-github{
-    padding-right: 7px;
+    padding-left: 47px;
+    color: #DD7134;
+}
+
+.developer_text {
+    font-weight: 700;
+    font-size: 18px;
+    color: #DD7134;
 }

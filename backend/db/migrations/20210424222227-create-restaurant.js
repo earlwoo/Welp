@@ -16,10 +16,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      url: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
+      // url: {
+      //   allowNull: false,
+      //   type: Sequelize.STRING
+      // },
       transactions: {
         type: Sequelize.TEXT
       },
@@ -43,11 +43,11 @@ module.exports = {
         type: Sequelize.STRING
       },
       coordinates: {
-        allowNull:false,
+        allowNull: false,
         type: Sequelize.TEXT
       },
       photos: {
-        type: Sequelize.ARRAY(Sequelize.STRING)
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,

@@ -9,7 +9,7 @@ function ReviewFormModal({ restId }) {
 
     return (
         <>
-            <button onClick={() => setShowModal(true)} disabled={!user}>Add Review</button>
+            <button className="addReview-btn" onClick={() => setShowModal(true)} disabled={!user}>Add Review</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <ReviewForm setShowModal={setShowModal} restId={restId} />

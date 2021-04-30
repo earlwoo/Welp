@@ -120,6 +120,7 @@
 .home__text {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     height: 75px;
+    font-size: 42px;
     font-weight: 700;
     display: flex;
     justify-content: center;
