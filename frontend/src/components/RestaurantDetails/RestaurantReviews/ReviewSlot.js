@@ -10,11 +10,10 @@ const ReviewSlot = ({ review }) => {
     //import user to see if user can edit or delete review
     const user = useSelector(state => state.session.user)
     const users = useSelector(state => state.users)
-    const 
     const dispatch = useDispatch()
     const [showModal, setShowModal] = useState(false);
 
-    const { id, title, userId, content, rating, updatedAt} = review
+    const { id, title, userId, content, rating, updatedAt } = review
 
     let reviewDate = updatedAt.split('T')[0].split('-')
     const [year, month, day] = reviewDate
