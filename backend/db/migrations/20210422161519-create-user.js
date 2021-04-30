@@ -30,6 +30,15 @@ module.exports = {
         type: Sequelize.STRING.BINARY,
         allowNull: false,
       },
+      city: {
+        type: Sequelize.STRING
+      },
+      state: {
+        type: Sequelize.STRING
+      },
+      avatar: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

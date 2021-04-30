@@ -4,29 +4,33 @@ const bcrypt = require('bcryptjs');
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Users', [
-      {
+
+    const userArr = [{
         email: 'demo@user.io',
         username: 'Demo-lition',
         hashedPassword: bcrypt.hashSync('password'),
         firstName: 'Demo',
-        lastName: 'User'
-      },
-      {
-        email: faker.internet.email(),
-        username: 'FakeUser1',
-        hashedPassword: bcrypt.hashSync(faker.internet.password()),
-        firstName: 'Fake',
-        lastName: 'User1'
-      },
-      {
-        email: faker.internet.email(),
-        username: 'FakeUser2',
-        hashedPassword: bcrypt.hashSync(faker.internet.password()),
-        firstName: 'Fake',
-        lastName: 'User2'
-      },
-    ], {});
+        lastName: 'User',
+        city: faker.address.city(),
+        state: faker.address.state(),
+        avatar: faker.image.avatar()
+      }]
+    for (let i = 0; i < 15; i++) {
+      const userObj = {};
+      userObj.email = faker.internet.email();
+      userObj.username = faker.internet.userName();
+      userObj.firstName = faker.name.firstName()
+      userObj.lastName = faker.name.lastName()
+      userObj.hashedPassword = bcrypt.hashSync(faker.internet.password())
+      userObj.city = faker.address.city()
+      userObj.state = faker.address.state()
+      userObj.avatar = faker.image.avatar()
+
+      userArr.push(userObj)
+    }
+
+
+    return queryInterface.bulkInsert('Users', userArr, {});
   },
 
   down: (queryInterface, Sequelize) => {
