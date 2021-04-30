@@ -10,6 +10,7 @@ const ReviewSlot = ({ review }) => {
     //import user to see if user can edit or delete review
     const user = useSelector(state => state.session.user)
     const users = useSelector(state => state.users)
+    const 
     const dispatch = useDispatch()
     const [showModal, setShowModal] = useState(false);
 
