@@ -1,0 +1,25 @@
+.home__photo--container {
+    /* height:250px; */
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 2px;
+    display: flex;
+    align-items: flex-end;
+    object-fit: contain;
+    text-align: center;
+    z-index: 0;
+
+}
+
+.home__photo--img {
+    height: 600px;
+    width: 100%;
+    background-position: center;
+    object-fit: cover;
+    text-align: center;
+    display: block;
+    opacity: .9;
+    position: relative;
+    z-index: 0;
+}

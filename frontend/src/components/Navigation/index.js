@@ -8,7 +8,7 @@ import SearchBar from "./SearchBar"
 import logo from './welpNav.png'
 import './Navigation.css';
 
-function Navigation({ isLoaded, searchTerm, setSearchTerm }){
+function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
   const users = useSelector(state=> state.users)
 
@@ -39,8 +39,7 @@ function Navigation({ isLoaded, searchTerm, setSearchTerm }){
         </NavLink>
       </div>
       <img className='logo__img' src={logo}></img>
-      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-
+      <SearchBar />
       <div className="user__div">
         <div className="user_welcome">{user?.firstName}</div>
         {isLoaded && sessionLinks}

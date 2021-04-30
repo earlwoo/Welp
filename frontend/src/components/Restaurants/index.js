@@ -1,35 +1,18 @@
 import RestaurantInfoCard from './RestaurantInfoCard'
 import "./Restaurants.css"
-import food from "./photos/food.png"
-import food1 from "./photos/food1.png"
-import food2 from "./photos/food2.png"
-import food3 from "./photos/food3.png"
-import food4 from "./photos/food4.png"
-import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
-export default function Restaurants({ restaurants, searchTerm }) {
+export default function Restaurants({ restaurants }) {
+    const searchTerm = useSelector(state => state.search)
+    // const restaurants = useSelector(state => state.restaurants)
 
     let restArr = [];
     for (let key in restaurants) {
         restArr.push(restaurants[key])
     };
 
-    const foodPhotos = [food, food1, food2, food3, food4]
-    const random = Math.floor(Math.random () * 5)
-    let randomImg = foodPhotos[random]
-
-
-    // let randomimg;
-    // useEffect(() => {
-    //     const random = Math.floor(Math.random () * 5)
-    //     randomimg = foodPhotos[random]
-    //     console.log("inside useeffect", randomImg)
-
-
-    // }, [])
-
     let searchSet = new Set()
-
+    // need new setup with new search, grabbing searchTerm from state
     if(searchTerm) {
         for (let key in restaurants) {
             if (restaurants[key].name.toLowerCase().includes(searchTerm.toLowerCase()) && !searchSet.has(key)) {
@@ -50,11 +33,6 @@ export default function Restaurants({ restaurants, searchTerm }) {
 
     return (
         <div className="restInfo__body">
-            <div className="home__photo--container">
-                <img className="home__photo--img" src={randomImg ? randomImg : null}>
-                </img>
-
-            </div>
             <h1 className="home__text">The Best Restaurants in Philadelphia</h1>
             <div className="restInfo__container">
                 {mainDisplay.map(restaurant => {

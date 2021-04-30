@@ -1,5 +1,6 @@
 import {NavLink} from 'react-router-dom'
 import RatingStars from '../RatingStars'
+import "./Restaurants.css"
 
 const RestaurantInfoCard = ({restaurant}) => {
 

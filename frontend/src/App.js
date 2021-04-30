@@ -9,12 +9,10 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer"
 import Restaurants from "./components/Restaurants"
 import RestaurantDetails from "./components/RestaurantDetails"
+import ResaurantsPhoto from "./components/RestaurantsPhoto";
 
 function App() {
   const restaurants = useSelector((state) => state.restaurants)
-  const [searchTerm, setSearchTerm ]= useState("")
-
-
 
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -32,11 +30,12 @@ function App() {
 
   return (
     <>
-      <Navigation searchTerm={searchTerm} setSearchTerm={setSearchTerm} isLoaded={isLoaded} />
+      <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
           <Route exact path="/">
-            <Restaurants searchTerm={searchTerm} restaurants={restaurants} />
+            <ResaurantsPhoto />
+            <Restaurants restaurants={restaurants}/>
           </Route>
           <Route path="/:restId">
             <RestaurantDetails restaurants={restaurants} />

@@ -4,12 +4,14 @@ import restaurantsReducer from './restaurants';
 import sessionReducer from './session'
 import reviewsReducer from './reviews'
 import usersReducer from './users'
+import searchReducer from './search';
 
 const rootReducer = combineReducers({
     session: sessionReducer,
     restaurants: restaurantsReducer,
     reviews: reviewsReducer,
     users: usersReducer,
+    search: searchReducer
 });
 
 

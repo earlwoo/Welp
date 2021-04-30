@@ -1,10 +1,23 @@
 import './Navigation.css';
+import { useDispatch } from "react-redux"
+import { setSearchTerm } from "../../store/search"
+import { useState } from 'react';
 
-const SearchBar = ({ searchTerm, setSearchTerm }) => {
+
+const SearchBar = () => {
+    const dispatch = useDispatch()
+    // let search = useSelector(state => state.search)
+    const [search, setSearch] = useState("")
 
     const onSubmit = (e) => {
         e.preventDefault()
-        setSearchTerm(searchTerm)
+        dispatch(setSearchTerm(search))
+        setSearch('')
+    }
+
+    const onChange = (e) => {
+        setSearch(e.target.value)
+        dispatch(setSearchTerm(e.target.value))
     }
 
     return (
@@ -13,8 +26,10 @@ const SearchBar = ({ searchTerm, setSearchTerm }) => {
             className='nav__search'
             type="text"
             placeholder="search"
-            value={searchTerm}
-            onChange={e => setSearchTerm(e.target.value)}
+            value={search}
+            onChange={onChange}
+            // also tried onChange={e => onChange(e)}
+            // onKeyPress={onChange}
             >
 
             </input>
