@@ -55,7 +55,7 @@ function LoginForm({ setShowModal }) {
   return (
     <div className='login--container'>
       <div className="welpImg">
-        <img src={welp}></img>
+        <img src={welp} alt="Welp logo"></img>
       </div>
       <div
         className="login-text">Log In</div>

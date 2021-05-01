@@ -1,53 +1,29 @@
-import { useDispatch, useSelector } from "react-redux"
-import { useState } from 'react'
+import { useSelector } from "react-redux"
 import RatingStars from "../../RatingStars"
-import * as reviewActions from "../../../store/reviews"
-import { Modal } from '../../../context/Modal';
-import EditReviewForm from './EditReviewForm'
+
 import "./ReviewSlot.css"
+import ReviewSlotHeader from "./ReviewSlotHeader";
 
 const ReviewSlot = ({ review }) => {
     //import user to see if user can edit or delete review
-    const user = useSelector(state => state.session.user)
-    const users = useSelector(state => state.users)
-    const dispatch = useDispatch()
-    const [showModal, setShowModal] = useState(false);
 
-    const { id, title, userId, content, rating, updatedAt } = review
+    const users = useSelector(state => state.users)
+
+    const { title, userId, content, rating, updatedAt } = review
 
     let reviewDate = updatedAt.split('T')[0].split('-')
     const [year, month, day] = reviewDate
 
-    const handleDelete = (e, id) => {
-        e.preventDefault()
-        dispatch(reviewActions.deleteReview(id))
-    }
 
-    const userReview = () => {
-        return (
-            <div className="review__editBtns">
-                <button className="edit__btn" onClick={() => setShowModal(true)}>edit</button>
-                {showModal && (
-                    <Modal onClose={() => setShowModal(false)}>
-                        <EditReviewForm setShowModal={setShowModal} review={review} />
-                    </Modal>
-                )}
-                <button className="del__btn" onClick={e => handleDelete(e, id)}>delete</button>
-            </div>
-        )
-    }
+
+
 
     const reviewUser = users[userId]
 
 
     return (
         <div className="review__container">
-            <div className="review__profile">
-                <div className="review__user">
-                    {reviewUser?.firstName} {reviewUser?.lastName} said...
-                </div>
-                {user?.id === userId ? userReview() : null}
-            </div>
+            <ReviewSlotHeader  review={review} reviewUser={reviewUser}/>
             <div className="review__star-rating">
                 <RatingStars rating={rating} />
                 <div className="review__date">

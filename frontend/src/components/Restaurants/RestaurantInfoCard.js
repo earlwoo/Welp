@@ -7,7 +7,7 @@ const RestaurantInfoCard = ({restaurant}) => {
     return (
         <div className="homepage__restinfo">
             <div className="restInfo__img">
-                <img className="image "src={restaurant?.imageUrl} />
+                <img className="image" alt="restaurant" src={restaurant?.imageUrl} />
             </div>
             <div className="restInfo__name">
                 <NavLink className="restInfo__name--font"to={`/${restaurant.id}`}>{restaurant.name}</NavLink>

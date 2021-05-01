@@ -5,17 +5,15 @@
     box-sizing: border-box;
     flex-wrap: wrap;
     margin: 0px 400px;
-
-
 }
 
 .homepage__restinfo {
-
     width: 350px;
     height: 420px;
     margin-bottom: 25px;
     border-radius: 5px;
     background-color: white;
+    box-shadow: 0 4px 16px rgb(0 0 0 / 20%);
 }
 
 .restInfo__img {

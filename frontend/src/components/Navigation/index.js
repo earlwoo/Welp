@@ -38,7 +38,7 @@ function Navigation({ isLoaded }){
           <i className="fas fa-home"></i>
         </NavLink>
       </div>
-      <img className='logo__img' src={logo}></img>
+      <img className='logo__img' alt="welp logo"src={logo}></img>
       <SearchBar />
       <div className="user__div">
         <div className="user_welcome">{user?.firstName}</div>

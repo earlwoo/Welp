@@ -28,9 +28,9 @@ const RestaurantHeader = () => {
                 </div>
             </div>
                 <div className='restDetail__Header'>
-                    <img className="photo1" src={restaurant?.photos[0]}></img>
-                    <img className="photo2" src={restaurant?.photos[1]}></img>
-                    <img className="photo3" src={restaurant?.photos[2]}></img>
+                    <img className="photo1" alt="restaurant photo1" src={restaurant?.photos[0]}></img>
+                    <img className="photo2" alt="restaurant photo2" src={restaurant?.photos[1]}></img>
+                    <img className="photo3" alt="restaurant photo3" src={restaurant?.photos[2]}></img>
                 </div>
             </div>
 

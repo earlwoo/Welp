@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import food from "./photos/food.png"
 import food1 from "./photos/food1.png"
 import food2 from "./photos/food2.png"
@@ -25,7 +24,7 @@ const ResaurantsPhoto = () => {
 
     return (
         <div className="home__photo--container">
-            <img className="home__photo--img" src={randomImg ? randomImg : null}>
+            <img className="home__photo--img" alt="banner" src={randomImg ? randomImg : null}>
             </img>
         </div>
     )

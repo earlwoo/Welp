@@ -71,7 +71,7 @@ function ReviewForm({ restId, setShowModal }) {
             <div
             className="addReview_logo-container">
                 <div className="thank-you">Thank you for using</div>
-                <img className="addReview_logo" src={welp} ></img>
+                <img className="addReview_logo" alt="welp logo" src={welp} ></img>
             </div>
         </div>
 

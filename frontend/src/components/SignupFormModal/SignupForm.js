@@ -36,7 +36,7 @@ function SignupFormPage({ setShowModal }) {
     return (
         <div className="sign-up--container">
             <div className="welpImg">
-                <img src={welp}></img>
+                <img alt="welp logo" src={welp}></img>
             </div>
             <div
             className="sign_up-text">...Sign Up</div>
