@@ -33,7 +33,6 @@ function ReviewForm({ restId, setShowModal }) {
 
     return (
         <div className="add-review__form-container">
-
             <form className="add-review__form" onSubmit={handleSubmit}>
                 <input
                     placeholder="add a title"

@@ -1,5 +1,5 @@
-.addReview-btn {
-    height: 50px;
+.editReview-btn {
+    height: 65px;
     width: 150px;
     margin-left: 50%;
     border: none;
@@ -12,20 +12,20 @@
     cursor: pointer;
 }
 
-.add-review__form-container {
+.edit-review__form-container {
     display: flex;
     flex-direction: row;
     width: 800px;
     height: 500px;
 }
 
-.add-review__form {
+.edit-review__form {
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: space-evenly;
     height: 500px;
-    width: 500px;
+    width: 680px;
     padding-left: 20px;
 
 }
@@ -39,7 +39,7 @@
     outline: none;
 }
 
-.add-review__title{
+.edit-review__title{
     height: 40px;
 
     border: 1px solid rgba(0, 0, 0, .6);
@@ -69,7 +69,7 @@
 
 }
 
-.addReview_logo-container{
+.editReview_logo-container{
     margin-top: 25%;
 }
 .thank-you{
@@ -80,8 +80,6 @@
     padding-right: 20px;
     margin-bottom: 15px;
     color: #009dff;
-    opacity: .3;
-    border: 1px solid red;
-
+    opacity: .7;
 
 }

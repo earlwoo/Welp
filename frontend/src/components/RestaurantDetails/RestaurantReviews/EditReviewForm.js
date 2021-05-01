@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import ReactStars from 'react-rating-stars-component'
 import * as reviewActions from "../../../store/reviews"
 import welp from "../../Navigation/welpNav.png"
+import "./EditReviewForm.css"
 
 const EditReviewForm = ({ setShowModal, review }) => {
     const user = useSelector(state => state.session.user)
@@ -38,14 +39,14 @@ const EditReviewForm = ({ setShowModal, review }) => {
         setShowModal(false)
     }
     return (
-        <div className="add-review__form-container">
-            <form className="add-review__form" onSubmit={handleSubmit}>
+        <div className="edit-review__form-container">
+            <form className="edit-review__form" onSubmit={handleSubmit}>
                 <input
                     placeholder={review?.title}
                     type="text"
                     value={title}
                     onChange={e => setTitle(e.target.value)}
-                    className="add-review__title"
+                    className="edit-review__title"
                 ></input>
                 <textarea
                     className="textarea"
@@ -74,9 +75,9 @@ const EditReviewForm = ({ setShowModal, review }) => {
                 <button className="submit-review__btn">edit review</button>
             </form>
             <div
-            className="addReview_logo-container">
+            className="editReview_logo-container">
                 <span className="thank-you">Thank you for using</span>
-                <img className="addReview_logo" alt="welp logo" src={welp} ></img>
+                <img className="editReview_logo" alt="welp logo" src={welp} ></img>
             </div>
         </div>
     )
