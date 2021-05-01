@@ -13,9 +13,9 @@ import ResaurantsPhoto from "./components/RestaurantsPhoto";
 
 function App() {
   const restaurants = useSelector((state) => state.restaurants)
-
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);

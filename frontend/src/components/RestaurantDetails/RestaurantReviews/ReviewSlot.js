@@ -5,7 +5,6 @@ import "./ReviewSlot.css"
 import ReviewSlotHeader from "./ReviewSlotHeader";
 
 const ReviewSlot = ({ review }) => {
-    //import user to see if user can edit or delete review
 
     const users = useSelector(state => state.users)
 
@@ -14,12 +13,7 @@ const ReviewSlot = ({ review }) => {
     let reviewDate = updatedAt.split('T')[0].split('-')
     const [year, month, day] = reviewDate
 
-
-
-
-
     const reviewUser = users[userId]
-
 
     return (
         <div className="review__container">
