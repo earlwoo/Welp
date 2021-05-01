@@ -1,4 +1,4 @@
-# jwt_auth_project
+# Welp
   Welp is a fullstack front-end to back-end project.  It is a clone of the Yelp website which shows businesses and business details.  Welp enables a user to see a list of restaurants and view detailed information about the restaurant, and it's user reviews.
   
 ![welpHome](https://user-images.githubusercontent.com/73197963/116771320-5fe96380-aa18-11eb-8222-243087b825ea.PNG)
