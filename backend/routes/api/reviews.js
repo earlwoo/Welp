@@ -1,14 +1,28 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
+const { check } = require('express-validator');
+const { handleValidationErrors } = require('../../utils/validation');
 const router = express.Router();
 const { Review } = require('../../db/models')
+
+const validateReview = [
+    check('title')
+        .exists({ checkFalsy: true })
+        .notEmpty()
+        .withMessage('Please provide a title.'),
+    check('content')
+        .exists({ checkFalsy: true })
+        .notEmpty()
+        .withMessage('Review cannot be empty.'),
+    handleValidationErrors
+]
 
 router.get('/', asyncHandler(async (req, res) => {
     let results = await Review.findAll()
     res.json(results)
 }))
 
-router.post('/', asyncHandler(async (req, res) => {
+router.post('/', validateReview, asyncHandler(async (req, res) => {
     const { title, content, rating, userId, restId } = req.body
 
     try {
@@ -21,7 +35,7 @@ router.post('/', asyncHandler(async (req, res) => {
     }
 }))
 
-router.post('/:id', asyncHandler(async (req, res) => {
+router.post('/:id',  validateReview,asyncHandler(async (req, res) => {
     const { id, title, content, rating } = req.body
     await Review.update({title, content, rating,},{where: {
         id

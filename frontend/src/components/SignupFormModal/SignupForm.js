@@ -83,8 +83,6 @@ function SignupFormPage({ setShowModal }) {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                 />
-
-
                 <input
                 className="input-field"
                     placeholder="Confirm Password"

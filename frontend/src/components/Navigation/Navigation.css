@@ -121,3 +121,9 @@
     background-color: rgba(241, 243, 247, .6);
     border-radius: 5px;
 }
+
+.dropdown__avatar {
+    border-radius: 100px;
+    width: 65px;
+    height: 65px;
+}
