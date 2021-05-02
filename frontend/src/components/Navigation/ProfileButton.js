@@ -40,10 +40,10 @@ function ProfileButton({ user }) {
       {showMenu && (
         <div className="profile-dropdown">
           <div>
-            <img className="dropdown__avatar" src={user.avatar}></img>
+            <img className="dropdown__avatar" src={user?.avatar}></img>
           </div>
-          <div className="user_username">{user.username}</div>
-          <div className="user_email">{user.email}</div>
+          <div className="user_username">{user?.username}</div>
+          <div className="user_email">{user?.email}</div>
           <div>
             <button className="logout_btn" onClick={logout}>Log Out</button>
           </div>

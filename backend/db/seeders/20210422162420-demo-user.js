@@ -11,9 +11,9 @@ module.exports = {
         hashedPassword: bcrypt.hashSync('password'),
         firstName: 'Demo',
         lastName: 'User',
+        avatar: faker.image.avatar(),
         city: faker.address.city(),
         state: faker.address.state(),
-        avatar: faker.image.avatar()
       }]
     for (let i = 0; i < 15; i++) {
       const userObj = {};
