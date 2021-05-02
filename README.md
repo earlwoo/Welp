@@ -36,7 +36,7 @@
 
 ## Technical Showcase
 
-Making as few as possible requests to the database for expensive fetch calls.  The store is updated at when hitting routes that need the data.  Then the data is either passed as a prop for immediate children components, but the component will otherwise subscribe to the state to have access to data.
+Making as few as possible requests to the database for expensive fetch calls.  The store is updated at components that need the data.  Data is either passed as a prop for immediate children components, but other components will otherwise subscribe to the state to have access to data.
 ```javascript
    function App() {
     const restaurants = useSelector((state) => state.restaurants)
