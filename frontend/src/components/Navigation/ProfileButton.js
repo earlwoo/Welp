@@ -1,11 +1,10 @@
 // frontend/src/components/Navigation/ProfileButton.js
 import React, { useState, useEffect } from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import "./Navigation.css"
 
 function ProfileButton({ user }) {
-
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
 
@@ -32,6 +31,7 @@ function ProfileButton({ user }) {
     return
   };
 
+
   return (
     <>
       <button className="nav__user" onClick={openMenu}>
@@ -40,7 +40,7 @@ function ProfileButton({ user }) {
       {showMenu && (
         <div className="profile-dropdown">
           <div>
-            <img className="dropdown__avatar" src={user?.avatar}></img>
+            <img className="dropdown__avatar" src={user?.avatar} alt="profile avatar"></img>
           </div>
           <div className="user_username">{user?.username}</div>
           <div className="user_email">{user?.email}</div>

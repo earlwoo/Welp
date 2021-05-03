@@ -12,10 +12,15 @@ function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
   const users = useSelector(state=> state.users)
 
+  let user;
+  if(users && sessionUser) {
+    user = users[sessionUser.id]
+  }
+
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <ProfileButton user={user} />
     );
   } else {
     sessionLinks = (
@@ -25,10 +30,8 @@ function Navigation({ isLoaded }){
       </>
     );
   }
-  let user
-  if(users && sessionUser) {
-    user = users[sessionUser.id]
-  }
+
+
 
 
   return (

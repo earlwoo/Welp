@@ -13,6 +13,7 @@ import ResaurantsPhoto from "./components/RestaurantsPhoto";
 
 function App() {
   const restaurants = useSelector((state) => state.restaurants)
+  const users = useSelector(state => state.users)
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -30,7 +31,7 @@ function App() {
 
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
+      <Navigation users={users} isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
           <Route exact path="/">

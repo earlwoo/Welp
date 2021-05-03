@@ -17,6 +17,7 @@ module.exports = {
       }]
     for (let i = 0; i < 15; i++) {
       const userObj = {};
+      
       userObj.email = faker.internet.email();
       userObj.username = faker.internet.userName();
       userObj.firstName = faker.name.firstName()
