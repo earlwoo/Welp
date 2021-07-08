@@ -33,10 +33,14 @@ export default function Restaurants({ restaurants }) {
 
     return (
         <div className="restInfo__body">
-            <h1 className="home__text">The Best Restaurants in Philadelphia</h1>
+            <h1 className="home__text">{searchTerm ? "Your Search Results" : "The Best Restaurants in Philadelphia"}</h1>
             <div className="restInfo__container">
                 {mainDisplay.map(restaurant => {
-                    return <RestaurantInfoCard key={restaurant.id} restaurant={restaurant}/>
+                    return (
+                    <a style={{display: 'block'}} key={restaurant.id} href={`/${restaurant.id}`}>
+                        <RestaurantInfoCard  restaurant={restaurant}/>
+                    </a>
+                    )
                 })}
             </div>
         </div>

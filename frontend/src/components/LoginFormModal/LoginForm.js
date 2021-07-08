@@ -66,7 +66,7 @@ function LoginForm({ setShowModal }) {
           ))}
         </ul>
         <input
-        className="input-field"
+          className="input-field"
           type="text"
           placeholder="Username or Email"
           value={credential}
@@ -74,7 +74,7 @@ function LoginForm({ setShowModal }) {
           required
         />
         <input
-        className="input-field"
+          className="input-field"
           type="password"
           placeholder="Password"
           value={password}
@@ -84,7 +84,7 @@ function LoginForm({ setShowModal }) {
         <button className="submit" type="submit">Log In</button>
       </form>
       <button
-      className="submit demo"
+        className="submit demo"
         onClick={handleDemo}>Demo User
       </button>
     </div>

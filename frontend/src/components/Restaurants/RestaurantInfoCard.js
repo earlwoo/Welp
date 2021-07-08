@@ -10,7 +10,9 @@ const RestaurantInfoCard = ({restaurant}) => {
                 <img className="image" alt="restaurant" src={restaurant?.imageUrl} />
             </div>
             <div className="restInfo__name">
-                <NavLink className="restInfo__name--font"to={`/${restaurant.id}`}>{restaurant.name}</NavLink>
+                <div className="restInfo__name--font">
+                    {restaurant.name}
+                </div>
             </div>
             <div className="restInfo__stars--container">
                 <RatingStars rating={restaurant?.rating} />

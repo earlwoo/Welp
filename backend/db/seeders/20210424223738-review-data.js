@@ -9,14 +9,16 @@ module.exports = {
 
     const reviewArr = []
 
-    for(let i = 0; i < 150; i++) {
+    for(let i = 1; i < 31; i++) {
+      for(let j = 0; j < 10; j++ ) {
         reviewArr.push({
           title: faker.lorem.sentence(),
           userId: getRandom(1, 17),
-          restId: getRandom(1, 31),
+          restId: i,
           content: faker.lorem.sentences(),
           rating: getRandom(2.5, 6),
         })
+      }
     }
 
     return queryInterface.bulkInsert('Reviews', reviewArr, {});

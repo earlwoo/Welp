@@ -1,5 +1,6 @@
 .footer__container {
     font-family: Helvetica, sans-serif;
+    position: sticky;
     display: grid;
     grid-template-columns: 1fr 5fr, 1fr;
     font-weight: 800;
@@ -10,8 +11,7 @@
     width: 100%;
     /* Height of the footer*/
     height: 60px;
-    background-color: rgba(255, 255, 255, 0.5);
-    opacity: 9.;
+    background-color: rgba(255, 255, 255, 0.9);
     align-items: center;
     border: none;
 }
